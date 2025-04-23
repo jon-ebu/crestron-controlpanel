@@ -1,6 +1,14 @@
 <script>
-  import Button from '$lib/Button.svelte';
-  import ButtonGroup from '$lib/ButtonGroup.svelte';
+  import Button from "$lib/Button.svelte";
+  import ButtonGroup from "$lib/ButtonGroup.svelte";
+  import VolumeSlider from "$lib/VolumeSlider.svelte";
+
+  let volume = 50;
+
+  function handleVolumeChange(newVolume) {
+    volume = newVolume;
+    console.log("Volume changed to:", volume);
+  }
 </script>
 
 <h1>MAIN SCREEN</h1>
@@ -20,22 +28,24 @@
 <ButtonGroup
   buttons={[
     {
-      selectedLabel: "Option 1",
-      unselectedLabel: "Option 1",
+      selectedLabel: "WALL HDMI",
+      unselectedLabel: "WALL HDMI",
       selectedColor: "blue",
-      unselectedColor: "gray"
+      unselectedColor: "gray",
     },
     {
-      selectedLabel: "Option 2",
-      unselectedLabel: "Option 2",
+      selectedLabel: "FLOOR HDMI",
+      unselectedLabel: "FLOOR HDMI",
       selectedColor: "blue",
-      unselectedColor: "gray"
+      unselectedColor: "gray",
     },
     {
-      selectedLabel: "Option 3",
-      unselectedLabel: "Option 3",
+      selectedLabel: "AIR MEDIA",
+      unselectedLabel: "AIR MEDIA",
       selectedColor: "blue",
-      unselectedColor: "gray"
-    }
+      unselectedColor: "gray",
+    },
   ]}
 />
+
+<VolumeSlider value={volume} onChange={handleVolumeChange} />

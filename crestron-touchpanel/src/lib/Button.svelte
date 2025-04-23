@@ -3,13 +3,16 @@
   export let unselectedLabel = "Unselected";
   export let selectedColor = "green";
   export let unselectedColor = "red";
-  export let isSelected = false; // New prop to control the selected state
+  export let isSelected = false; // Controlled externally or toggled internally
+  export let onClick = null; // Optional callback for parent control
 
-  function toggleState() {
-    // No internal state toggle for grouped buttons
-    if (!isSelected) {
-      const event = new CustomEvent('click');
-      dispatchEvent(event);
+  function handleClick() {
+    if (onClick) {
+      // If a parent callback is provided, use it
+      onClick();
+    } else {
+      // Otherwise, toggle the state internally
+      isSelected = !isSelected;
     }
   }
 </script>
@@ -28,7 +31,7 @@
 </style>
 
 <button
-  on:click={toggleState}
+  on:click={handleClick}
   style="background-color: {isSelected ? selectedColor : unselectedColor}; color: white;"
 >
   {isSelected ? selectedLabel : unselectedLabel}

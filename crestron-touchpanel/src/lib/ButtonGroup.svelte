@@ -16,8 +16,8 @@
       unselectedLabel={button.unselectedLabel}
       selectedColor={button.selectedColor}
       unselectedColor={button.unselectedColor}
-      on:click={() => selectButton(index)}
       isSelected={index === selectedIndex}
+      onClick={() => selectButton(index)}
     />
   {/each}
 </div>
