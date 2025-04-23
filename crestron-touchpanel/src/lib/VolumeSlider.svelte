@@ -80,12 +80,12 @@
     }
   
     .icon-button {
-      width: 50px;
-      height: 50px;
+      width: 100px;
+      height: 100px;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 24px;
+      font-size: 60px;
       color: black;
       background-color: #f9f9f9;
       border: 1px solid #ccc;
@@ -110,7 +110,7 @@
       -webkit-appearance: none;
       appearance: none;
       width: 100%;
-      height: 50px; /* Match the height of the buttons */
+      height: 100px; /* Match the height of the buttons */
       background: linear-gradient(
         to right,
         var(--track-color, #f0ad4e) 0%,

@@ -13,105 +13,111 @@
 
 <div id="scaling-container">
     <div id="page-container">
-        <div id="main-screen">
-            <div class="header-container">
-                <h1>MAIN SCREEN</h1>
-                <div class="controls-container">
-                    <div class="buttons-container">
-                        <div class="group">
-                            <Button
-                                selectedLabel="Screen On"
-                                unselectedLabel="Screen Off"
-                                selectedColor="green"
-                                unselectedColor="gray"
-                            />
-                            <Button
-                                selectedLabel="Video Mute On"
-                                unselectedLabel="Video Mute Off"
-                                selectedColor="blue"
-                                unselectedColor="gray"
-                            />
-                        </div>
-                        <div class="group">
-                            <div class="input-label">Input Sources</div>
-                            <ButtonGroup
-                                buttons={[
-                                    {
-                                        selectedLabel: "WALL HDMI",
-                                        unselectedLabel: "WALL HDMI",
-                                        selectedColor: "blue",
-                                        unselectedColor: "gray",
-                                    },
-                                    {
-                                        selectedLabel: "FLOOR HDMI",
-                                        unselectedLabel: "FLOOR HDMI",
-                                        selectedColor: "blue",
-                                        unselectedColor: "gray",
-                                    },
-                                    {
-                                        selectedLabel: "AIR MEDIA",
-                                        unselectedLabel: "AIR MEDIA",
-                                        selectedColor: "blue",
-                                        unselectedColor: "gray",
-                                    },
-                                ]}
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- New Side Screen Section -->
-        <div id="side-screen">
-            <div class="header-container">
-                <h1>SIDE SCREEN</h1>
-                <div class="controls-container">
-                    <div class="buttons-container">
-                        <div class="group">
-                            <Button
-                                selectedLabel="Screen On"
-                                unselectedLabel="Screen Off"
-                                selectedColor="green"
-                                unselectedColor="gray"
-                            />
-                            <Button
-                                selectedLabel="Video Mute On"
-                                unselectedLabel="Video Mute Off"
-                                selectedColor="blue"
-                                unselectedColor="gray"
-                            />
-                        </div>
-                        <div class="group">
-                            <div class="input-label">Input Sources</div>
-                            <ButtonGroup
-                                buttons={[
-                                    {
-                                        selectedLabel: "WALL HDMI",
-                                        unselectedLabel: "WALL HDMI",
-                                        selectedColor: "blue",
-                                        unselectedColor: "gray",
-                                    },
-                                    {
-                                        selectedLabel: "FLOOR HDMI",
-                                        unselectedLabel: "FLOOR HDMI",
-                                        selectedColor: "blue",
-                                        unselectedColor: "gray",
-                                    },
-                                    {
-                                        selectedLabel: "AIR MEDIA",
-                                        unselectedLabel: "AIR MEDIA",
-                                        selectedColor: "blue",
-                                        unselectedColor: "gray",
-                                    },
-                                ]}
-                            />
+        <!-- Main Screen Section -->
+        <div class="box">
+            <div id="main-screen">
+                <div class="header-container">
+                    <h1>MAIN SCREEN</h1>
+                    <div class="controls-container">
+                        <div class="buttons-container">
+                            <div class="group">
+                                <Button
+                                    selectedLabel="Screen On"
+                                    unselectedLabel="Screen Off"
+                                    selectedColor="green"
+                                    unselectedColor="gray"
+                                />
+                                <Button
+                                    selectedLabel="Video Mute On"
+                                    unselectedLabel="Video Mute Off"
+                                    selectedColor="blue"
+                                    unselectedColor="gray"
+                                />
+                            </div>
+                            <div class="group">
+                                <div class="input-label">Input Sources</div>
+                                <ButtonGroup
+                                    buttons={[
+                                        {
+                                            selectedLabel: "WALL HDMI",
+                                            unselectedLabel: "WALL HDMI",
+                                            selectedColor: "blue",
+                                            unselectedColor: "gray",
+                                        },
+                                        {
+                                            selectedLabel: "FLOOR HDMI",
+                                            unselectedLabel: "FLOOR HDMI",
+                                            selectedColor: "blue",
+                                            unselectedColor: "gray",
+                                        },
+                                        {
+                                            selectedLabel: "AIR MEDIA",
+                                            unselectedLabel: "AIR MEDIA",
+                                            selectedColor: "blue",
+                                            unselectedColor: "gray",
+                                        },
+                                    ]}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Side Screen Section -->
+        <div class="box">
+            <div id="side-screen">
+                <div class="header-container">
+                    <h1>SIDE SCREEN</h1>
+                    <div class="controls-container">
+                        <div class="buttons-container">
+                            <div class="group">
+                                <Button
+                                    selectedLabel="Screen On"
+                                    unselectedLabel="Screen Off"
+                                    selectedColor="green"
+                                    unselectedColor="gray"
+                                />
+                                <Button
+                                    selectedLabel="Video Mute On"
+                                    unselectedLabel="Video Mute Off"
+                                    selectedColor="blue"
+                                    unselectedColor="gray"
+                                />
+                            </div>
+                            <div class="group">
+                                <div class="input-label">Input Sources</div>
+                                <ButtonGroup
+                                    buttons={[
+                                        {
+                                            selectedLabel: "WALL HDMI",
+                                            unselectedLabel: "WALL HDMI",
+                                            selectedColor: "blue",
+                                            unselectedColor: "gray",
+                                        },
+                                        {
+                                            selectedLabel: "FLOOR HDMI",
+                                            unselectedLabel: "FLOOR HDMI",
+                                            selectedColor: "blue",
+                                            unselectedColor: "gray",
+                                        },
+                                        {
+                                            selectedLabel: "AIR MEDIA",
+                                            unselectedLabel: "AIR MEDIA",
+                                            selectedColor: "blue",
+                                            unselectedColor: "gray",
+                                        },
+                                    ]}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
         <div id="footer">
             <div class="slider-wrapper">
                 <VolumeSlider value={volume} onChange={handleVolumeChange} />
@@ -167,13 +173,16 @@
         overflow: hidden;
     }
 
-    #main-screen,
-    #side-screen {
+    .box {
         flex: 1;
         display: flex;
         flex-direction: column;
         padding: 20px;
-        overflow-y: auto;
+        margin: 10px;
+        background-color: #f9f9f9;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     .header-container {
