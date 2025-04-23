@@ -1,93 +1,120 @@
 <script>
-  export let value = 50; // Initial volume value (0-100)
-  export let onChange = null; // Optional callback for parent control
-
-  function handleInput(event) {
-    value = +event.target.value;
-    if (onChange) {
-      onChange(value);
+    export let value = 50; // Initial volume value (0-100)
+    export let onChange = null; // Optional callback for parent control
+  
+    function handleInput(event) {
+      value = +event.target.value;
+      if (onChange) {
+        onChange(value);
+      }
     }
-  }
-</script>
-
-<style>
-  .slider-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .icon {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .slider {
+  
+    function decreaseVolume() {
+      value = Math.max(0, value - 10); // Ensure the value doesn't go below 0
+      if (onChange) {
+        onChange(value);
+      }
+    }
+  
+    function increaseVolume() {
+      value = Math.min(100, value + 10); // Ensure the value doesn't exceed 100
+      if (onChange) {
+        onChange(value);
+      }
+    }
+  </script>
+  
+  <div class="slider-container">
+    <button class="icon-button" on:click={decreaseVolume}>
+      <i class="bi bi-volume-down"></i>
+    </button>
+    <input
+      type="range"
+      min="0"
+      max="100"
+      {value}
+      class="slider"
+      style="--value: {value}%"
+      on:input={handleInput}
+    />
+    <button class="icon-button" on:click={increaseVolume}>
+      <i class="bi bi-volume-up"></i>
+    </button>
+  </div>
+  
+  <style>
+    .slider-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  
+    .icon-button {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      color: black;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+  
+    .icon-button:hover {
+      background-color: #e6e6e6;
+    }
+  
+    .icon-button:active {
+      transform: scale(0.95); /* Add a slight press effect */
+    }
+  
+    .slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 50px; /* Match the height of the buttons */
+      background: linear-gradient(
+        to right,
+        #f0ad4e 0%,
+        #f0ad4e var(--value, 50%),
+        #f0f0f0 var(--value, 50%),
+        #f0f0f0 100%
+      );
+      border-radius: 5px;
+      outline: none;
+      overflow: hidden;
+      position: relative;
+    }
+  
+    .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 100%;
-    height: 10px;
-    background: #f0f0f0;
-    border-radius: 5px;
-    outline: none;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background: #007bff;
-    border-radius: 50%;
-    cursor: pointer;
-    position: relative;
-    z-index: 2;
+    width: 0; /* Hide the thumb */
+    height: 0; /* Hide the thumb */
+    background: none; /* Remove background */
+    border: none; /* Remove border */
   }
 
   .slider::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    background: #007bff;
-    border-radius: 50%;
-    cursor: pointer;
+    width: 0; /* Hide the thumb */
+    height: 0; /* Hide the thumb */
+    background: none; /* Remove background */
+    border: none; /* Remove border */
   }
 
   .slider::-ms-thumb {
-    width: 20px;
-    height: 20px;
-    background: #007bff;
-    border-radius: 50%;
-    cursor: pointer;
+    width: 0; /* Hide the thumb */
+    height: 0; /* Hide the thumb */
+    background: none; /* Remove background */
+    border: none; /* Remove border */
   }
-
-  .slider::-webkit-slider-runnable-track {
-    background: linear-gradient(to right, #f0ad4e 0%, #f0ad4e var(--value, 50%), #f0f0f0 var(--value, 50%), #f0f0f0 100%);
-  }
-
-  .slider::-moz-range-progress {
-    background: #f0ad4e;
-  }
-
-  .slider::-ms-fill-lower {
-    background: #f0ad4e;
-  }
-</style>
-
-<div class="slider-container">
-  <div class="icon">🔈</div>
-  <input
-    type="range"
-    min="0"
-    max="100"
-    value={value}
-    class="slider"
-    style="--value: {value}%"
-    on:input={handleInput}
-  />
-  <div class="icon">🔊</div>
-</div>
+  </style>
