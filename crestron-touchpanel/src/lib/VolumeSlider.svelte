@@ -1,11 +1,15 @@
 <script>
     export let value = 50; // Initial volume value (0-100)
     export let onChange = null; // Optional callback for parent control
+    let isMuted = false; // Track mute state
   
     function handleInput(event) {
       value = +event.target.value;
       if (onChange) {
         onChange(value);
+      }
+      if (value > 0) {
+        isMuted = false; // Automatically unmute if the slider is adjusted
       }
     }
   
@@ -14,6 +18,9 @@
       if (onChange) {
         onChange(value);
       }
+      if (value > 0) {
+        isMuted = false; // Automatically unmute if volume is adjusted
+      }
     }
   
     function increaseVolume() {
@@ -21,10 +28,28 @@
       if (onChange) {
         onChange(value);
       }
+      if (value > 0) {
+        isMuted = false; // Automatically unmute if volume is adjusted
+      }
+    }
+  
+    function toggleMute() {
+      isMuted = !isMuted;
+      if (isMuted) {
+        value = 0; // Set volume to 0 when muted
+      } else {
+        value = 50; // Restore volume to a default value (e.g., 50) when unmuted
+      }
+      if (onChange) {
+        onChange(value);
+      }
     }
   </script>
   
   <div class="slider-container">
+    <button class="icon-button mute-button" on:click={toggleMute}>
+      <i class="bi bi-volume-mute" style="color: {isMuted ? 'white' : 'red'}; background-color: {isMuted ? 'red' : 'white'}; border-radius: 50%; padding: 5px;"></i>
+    </button>
     <button class="icon-button" on:click={decreaseVolume}>
       <i class="bi bi-volume-down"></i>
     </button>
@@ -34,7 +59,7 @@
       max="100"
       {value}
       class="slider"
-      style="--value: {value}%"
+      style="--value: {value}%; --track-color: {isMuted ? '#555' : '#f0ad4e'};"
       on:input={handleInput}
     />
     <button class="icon-button" on:click={increaseVolume}>
@@ -77,6 +102,10 @@
       transform: scale(0.95); /* Add a slight press effect */
     }
   
+    .mute-button {
+      color: red; /* Default mute button color */
+    }
+  
     .slider {
       -webkit-appearance: none;
       appearance: none;
@@ -84,8 +113,8 @@
       height: 50px; /* Match the height of the buttons */
       background: linear-gradient(
         to right,
-        #f0ad4e 0%,
-        #f0ad4e var(--value, 50%),
+        var(--track-color, #f0ad4e) 0%,
+        var(--track-color, #f0ad4e) var(--value, 50%),
         #f0f0f0 var(--value, 50%),
         #f0f0f0 100%
       );
@@ -96,25 +125,25 @@
     }
   
     .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 0; /* Hide the thumb */
-    height: 0; /* Hide the thumb */
-    background: none; /* Remove background */
-    border: none; /* Remove border */
-  }
-
-  .slider::-moz-range-thumb {
-    width: 0; /* Hide the thumb */
-    height: 0; /* Hide the thumb */
-    background: none; /* Remove background */
-    border: none; /* Remove border */
-  }
-
-  .slider::-ms-thumb {
-    width: 0; /* Hide the thumb */
-    height: 0; /* Hide the thumb */
-    background: none; /* Remove background */
-    border: none; /* Remove border */
-  }
+      -webkit-appearance: none;
+      appearance: none;
+      width: 0; /* Hide the thumb */
+      height: 0; /* Hide the thumb */
+      background: none; /* Remove background */
+      border: none; /* Remove border */
+    }
+  
+    .slider::-moz-range-thumb {
+      width: 0; /* Hide the thumb */
+      height: 0; /* Hide the thumb */
+      background: none; /* Remove background */
+      border: none; /* Remove border */
+    }
+  
+    .slider::-ms-thumb {
+      width: 0; /* Hide the thumb */
+      height: 0; /* Hide the thumb */
+      background: none; /* Remove background */
+      border: none; /* Remove border */
+    }
   </style>
