@@ -21,10 +21,12 @@
   button {
     padding: 10px 20px;
     font-size: 16px;
+    font-weight: bold;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     width: 150px;
+    height: 100px;
     text-align: center;
     white-space: nowrap;
   }
