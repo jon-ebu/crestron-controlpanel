@@ -13,14 +13,14 @@
     {
       selectedLabel: "FLOOR HDMI",
       unselectedLabel: "FLOOR HDMI",
-      selectedColor: "#556B2F",
+      selectedColor: "#304f30",
       unselectedColor: "#8FBC8F",
     },
     {
       selectedLabel: "AIR MEDIA",
       unselectedLabel: "AIR MEDIA",
       selectedColor: "#007FA3",
-      unselectedColor: "#70dfff"
+      unselectedColor: "#63ddff"
     },
   ];
 

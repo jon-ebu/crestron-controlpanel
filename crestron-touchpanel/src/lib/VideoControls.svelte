@@ -23,7 +23,7 @@
             <Button
               selectedLabel="VIDEO MUTE"
               unselectedLabel="VIDEO MUTE"
-              selectedColor="blue"
+              selectedColor="black"
               unselectedColor="gray"
             />
           </div>
