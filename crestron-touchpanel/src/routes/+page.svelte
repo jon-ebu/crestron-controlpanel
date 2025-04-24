@@ -7,20 +7,20 @@
     {
       selectedLabel: "WALL HDMI",
       unselectedLabel: "WALL HDMI",
-      selectedColor: "blue",
-      unselectedColor: "gray",
+      selectedColor: "#FFA500",
+      unselectedColor: "#ffc966",
     },
     {
       selectedLabel: "FLOOR HDMI",
       unselectedLabel: "FLOOR HDMI",
-      selectedColor: "blue",
-      unselectedColor: "gray",
+      selectedColor: "#556B2F",
+      unselectedColor: "#8FBC8F",
     },
     {
       selectedLabel: "AIR MEDIA",
       unselectedLabel: "AIR MEDIA",
-      selectedColor: "blue",
-      unselectedColor: "gray",
+      selectedColor: "#007FA3",
+      unselectedColor: "#70dfff"
     },
   ];
 
