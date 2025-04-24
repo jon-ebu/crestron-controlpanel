@@ -18,19 +18,13 @@
     {
       selectedLabel: "WALL HDMI",
       unselectedLabel: "WALL HDMI",
-      selectedColor: "blue",
+      selectedColor: "black",
       unselectedColor: "gray",
     },
     {
       selectedLabel: "FLOOR HDMI",
       unselectedLabel: "FLOOR HDMI",
-      selectedColor: "blue",
-      unselectedColor: "gray",
-    },
-    {
-      selectedLabel: "AIR MEDIA",
-      unselectedLabel: "AIR MEDIA",
-      selectedColor: "blue",
+      selectedColor: "black",
       unselectedColor: "gray",
     },
   ];

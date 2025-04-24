@@ -37,11 +37,6 @@
   gap: 20px;
 }
 
-.header-container h1 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
 .controls-container {
   display: flex;
   flex-direction: column;

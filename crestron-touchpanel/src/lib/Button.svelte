@@ -1,11 +1,14 @@
 <script>
-  export let selectedLabel = "Selected";
-  export let unselectedLabel = "Unselected";
-  export let selectedColor = "green";
-  export let unselectedColor = "red";
-  export let isSelected = false; // Controlled externally or toggled internally
-  export let isHtml = false; // New prop to determine if labels should be rendered as HTML
-  export let onClick = null; // Optional callback for parent control
+  let {
+    selectedLabel = "Selected",
+    unselectedLabel = "Unselected",
+    selectedColor = "green",
+    unselectedColor = "red",
+    class: propsClass = "",
+    isSelected = false, // Controlled externally or toggled internally
+    isHtml = false, // New prop to determine if labels should be rendered as HTML
+    onClick = null // Optional callback for parent control
+  } = $props();
 
   export let componentCount = 1; // Number of buttons or any other input
   $: scaleFactor = Math.min(1.5, 1 / Math.sqrt(componentCount)); 
@@ -18,10 +21,12 @@
       isSelected = !isSelected;
     }
   }
+
 </script>
 
 <button
   on:click={handleClick}
+  class={propsClass}
   style="background-color: {isSelected
     ? selectedColor
     : unselectedColor}; color: white;"
@@ -36,13 +41,13 @@
 <style>
   button {
     padding: 10px 20px;
-    font-size: 32px;
+    font-size: 30px;
     font-weight: bold;
     border: none;
     cursor: pointer;
     border-radius: 20px;
     width: 200px;
-    height: 120px;
+    height: 100px;
     text-align: center;
     white-space: wrap;
     transition: all 0.3s ease; /* Smooth transition for animations */
@@ -50,7 +55,9 @@
 
   button.on {
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.7); /* Glow effect for "on" state */
-    transform: scale(1.05); /* Slightly enlarge the button for tactile feedback */
+    transform: scale(
+      1.05
+    ); /* Slightly enlarge the button for tactile feedback */
   }
 
   button.off {

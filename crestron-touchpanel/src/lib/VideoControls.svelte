@@ -14,8 +14,8 @@
           <div>
             <div class="input-label">Projector Controls</div>
             <Button
-              selectedLabel="<i class='bi bi-power' style='font-size: 4rem; line-height: 0;'></i>"
-              unselectedLabel="<i class='bi bi-power' style='font-size: 4rem; line-height: 0;'></i>"
+              selectedLabel="POWER OFF"
+              unselectedLabel="POWER ON"
               selectedColor="red"
               unselectedColor="green"
               isHtml={true}
@@ -23,7 +23,7 @@
             <Button
               selectedLabel="VIDEO MUTE"
               unselectedLabel="VIDEO MUTE"
-              selectedColor="blue"
+              selectedColor="BLACK"
               unselectedColor="gray"
             />
           </div>
