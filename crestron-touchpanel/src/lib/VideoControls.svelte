@@ -24,7 +24,7 @@
               selectedLabel="VIDEO MUTE"
               unselectedLabel="VIDEO MUTE"
               selectedColor="BLACK"
-              unselectedColor="lightgray"
+              unselectedColor="gray"
             />
           </div>
         </div>

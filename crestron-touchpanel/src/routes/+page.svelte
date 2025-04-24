@@ -7,26 +7,26 @@
     {
       selectedLabel: "WALL HDMI",
       unselectedLabel: "WALL HDMI",
-      selectedColor: "#FFA500",
-      unselectedColor: "#ffc966",
+      selectedColor: "black",
+      unselectedColor: "gray",
     },
     {
       selectedLabel: "FLOOR HDMI 1",
       unselectedLabel: "FLOOR HDMI 1",
-      selectedColor: "#304f30",
-      unselectedColor: "#8FBC8F",
+      selectedColor: "black",
+      unselectedColor: "gray",
     },
     {
       selectedLabel: "FLOOR HDMI 2",
       unselectedLabel: "FLOOR HDMI 2",
-      selectedColor: "#6A5ACD",
-      unselectedColor: "#c2bceb"
+      selectedColor: "black",
+      unselectedColor: "gray",
     },
     {
       selectedLabel: "AIR MEDIA",
       unselectedLabel: "AIR MEDIA",
-      selectedColor: "#007FA3",
-      unselectedColor: "#63ddff"
+      selectedColor: "black",
+      unselectedColor: "gray",
     },
   ];
 
@@ -40,7 +40,6 @@
     <VideoControls title="STAGE LEFT (HOUSE RIGHT)" inputSources={inputSources} />
     <VideoControls title="CENTER" inputSources={inputSources} />
     <VideoControls title="STAGE RIGHT (HOUSE LEFT)" inputSources={inputSources} />
-
     <Footer />
   </div>
 </div>
