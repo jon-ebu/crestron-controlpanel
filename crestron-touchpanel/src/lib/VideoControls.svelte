@@ -1,136 +1,106 @@
 <script>
-    import Button from './Button.svelte';
-    import ButtonGroup from './ButtonGroup.svelte';
-  
-    export let title = "Default Title"; // Configurable title
-    export let inputSources = []; // Configurable array of input sources
-    export let screenCount = 1; // Number of screens
-  </script>
-  
-  <div class="box" class:scaled={screenCount >= 3}>
-    <div class="header-container">
-      <h1>{title}</h1>
-      <div class="controls-container">
-        <div class="buttons-container">
-          <div class="group">
-            <div>
-              <div class="input-label">Projector Controls</div>
-              <Button
-                selectedLabel="<i class='bi bi-power' style='font-size: 4rem; line-height: 0;'></i>"
-                unselectedLabel="<i class='bi bi-power' style='font-size: 4rem; line-height: 0;'></i>"
-                selectedColor="red"
-                unselectedColor="green"
-                isHtml={true}
-                scaled={screenCount >= 3}
-              />
-              <Button
-                selectedLabel="VIDEO MUTE"
-                unselectedLabel="VIDEO MUTE"
-                selectedColor="blue"
-                unselectedColor="gray"
-                scaled={screenCount >= 3}
-              />
-            </div>
+  import Button from "./Button.svelte";
+  import ButtonGroup from "./ButtonGroup.svelte";
+  export let title = "Default Title"; // Configurable title
+  export let inputSources = []; // Configurable array of input sources
+</script>
+
+<div class="box">
+  <div class="header-container">
+    <h1>{title}</h1>
+    <div class="controls-container">
+      <div class="buttons-container">
+        <div class="group">
+          <div>
+            <div class="input-label">Projector Controls</div>
+            <Button
+              selectedLabel="<i class='bi bi-power' style='font-size: 4rem; line-height: 0;'></i>"
+              unselectedLabel="<i class='bi bi-power' style='font-size: 4rem; line-height: 0;'></i>"
+              selectedColor="red"
+              unselectedColor="green"
+              isHtml={true}
+            />
+            <Button
+              selectedLabel="VIDEO MUTE"
+              unselectedLabel="VIDEO MUTE"
+              selectedColor="blue"
+              unselectedColor="gray"
+            />
           </div>
-          <div class="group">
-            <div class="input-label">Input Sources (select one)</div>
-            <ButtonGroup buttons={inputSources} scaled={screenCount >= 3} />
-          </div>
+        </div>
+        <div class="group">
+          <div class="input-label">Input Sources (select one)</div>
+          <ButtonGroup buttons={inputSources} />
         </div>
       </div>
     </div>
   </div>
-  
-  <style>
-    .box {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      margin: 10px;
-      background-color: #f9f9f9;
-      border: 2px solid #878787;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-  
-    .box.scaled {
-      padding: 10px;
-    }
-  
-    .header-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 20px;
-    }
-  
-    h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
-  
-    .box.scaled h1 {
-      font-size: 2rem;
-    }
-  
-    .controls-container {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      width: 100%;
-      height: 100%;
-    }
-  
-    .buttons-container {
-      display: flex;
-      flex-direction: row;
-      gap: 40px;
-      justify-content: center;
-      align-items: flex-end;
-      flex: 1;
-      flex-wrap: nowrap;
-    }
-  
-    .box.scaled .buttons-container {
-      gap: 20px;
-    }
-  
-    .group {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      align-items: center;
-      justify-content: flex-end;
-      flex: 1;
-    }
-  
-    .box.scaled .group {
-      gap: 5px;
-    }
-  
-    .input-label {
-      text-align: center;
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      width: 100%;
-    }
-  
-    .box.scaled .input-label {
-      font-size: 1rem;
-    }
-  
-    button {
-      font-size: 1rem;
-      padding: 15px 20px;
-    }
-  
-    .box.scaled button {
-      font-size: 0.8rem;
-      padding: 10px 15px;
-    }
-  </style>
+</div>
+<style>
+  .box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+    background-color: #f9f9f9;
+    border: 2px solid #878787;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  .controls-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .buttons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-end;
+    flex: 1;
+    flex-wrap: nowrap;
+  }
+
+  .group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+  }
+
+  .input-label {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 15px 20px;
+  }
+</style>

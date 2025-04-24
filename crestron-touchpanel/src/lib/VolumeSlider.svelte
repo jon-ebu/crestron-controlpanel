@@ -94,9 +94,8 @@
     justify-content: center;
     align-items: center;
     font-size: 60px;
-    color: black;
     background-color: #f9f9f9;
-    border: 1px solid #ccc;
+    border: 3px solid rgb(204, 204, 204);
     border-radius: 5px;
     cursor: pointer;
     transition:
