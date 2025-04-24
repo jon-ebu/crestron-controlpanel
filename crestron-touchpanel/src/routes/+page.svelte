@@ -16,12 +16,6 @@
       selectedColor: "black",
       unselectedColor: "gray",
     },
-    {
-      selectedLabel: "AIR MEDIA",
-      unselectedLabel: "AIR MEDIA",
-      selectedColor: "black",
-      unselectedColor: "gray",
-    },
   ];
 
 </script>
@@ -31,9 +25,8 @@
 <div id="scaling-container">
   <div id="page-container">
     <!-- Main Screen Section -->
-    <VideoControls title="STAGE LEFT (HOUSE RIGHT)" inputSources={inputSources} />
-    <VideoControls title="CENTER" inputSources={inputSources} />
-    <VideoControls title="STAGE RIGHT (HOUSE LEFT)" inputSources={inputSources} />
+    <VideoControls title="MAIN SCREEN" inputSources={inputSources} />
+    <VideoControls title="SIDE SCREEN" inputSources={inputSources} />
     <Footer />
   </div>
 </div>
