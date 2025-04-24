@@ -32,13 +32,13 @@
 <style>
   button {
     padding: 10px 20px;
-    font-size: 32px;
+    font-size: 20px;
     font-weight: bold;
     border: none;
     cursor: pointer;
     border-radius: 20px;
-    width: 200px;
-    height: 120px;
+    width: 150px;
+    height: 60px;
     text-align: center;
     white-space: wrap;
     transition: all 0.3s ease; /* Smooth transition for animations */

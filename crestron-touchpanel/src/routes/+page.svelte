@@ -7,20 +7,26 @@
     {
       selectedLabel: "WALL HDMI",
       unselectedLabel: "WALL HDMI",
-      selectedColor: "blue",
-      unselectedColor: "gray",
+      selectedColor: "#FFA500",
+      unselectedColor: "#ffc966",
     },
     {
-      selectedLabel: "FLOOR HDMI",
-      unselectedLabel: "FLOOR HDMI",
-      selectedColor: "blue",
-      unselectedColor: "gray",
+      selectedLabel: "FLOOR HDMI 1",
+      unselectedLabel: "FLOOR HDMI 1",
+      selectedColor: "#304f30",
+      unselectedColor: "#8FBC8F",
+    },
+    {
+      selectedLabel: "FLOOR HDMI 2",
+      unselectedLabel: "FLOOR HDMI 2",
+      selectedColor: "#6A5ACD",
+      unselectedColor: "#c2bceb"
     },
     {
       selectedLabel: "AIR MEDIA",
       unselectedLabel: "AIR MEDIA",
-      selectedColor: "blue",
-      unselectedColor: "gray",
+      selectedColor: "#007FA3",
+      unselectedColor: "#63ddff"
     },
   ];
 
@@ -31,9 +37,10 @@
 <div id="scaling-container">
   <div id="page-container">
     <!-- Main Screen Section -->
-    <VideoControls title="MAIN SCREEN" inputSources={inputSources} />
-    <VideoControls title="SIDE SCREEN" inputSources={inputSources} />
-  
+    <VideoControls title="STAGE LEFT (HOUSE RIGHT)" inputSources={inputSources} />
+    <VideoControls title="CENTER" inputSources={inputSources} />
+    <VideoControls title="STAGE RIGHT (HOUSE LEFT)" inputSources={inputSources} />
+
     <Footer />
   </div>
 </div>
