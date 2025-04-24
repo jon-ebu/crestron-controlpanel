@@ -4,9 +4,10 @@
   
     export let title = "Default Title"; // Configurable title
     export let inputSources = []; // Configurable array of input sources
+    export let screenCount = 1; // Number of screens
   </script>
   
-  <div class="box">
+  <div class="box" class:scaled={screenCount >= 3}>
     <div class="header-container">
       <h1>{title}</h1>
       <div class="controls-container">
@@ -20,18 +21,20 @@
                 selectedColor="red"
                 unselectedColor="green"
                 isHtml={true}
+                scaled={screenCount >= 3}
               />
               <Button
                 selectedLabel="VIDEO MUTE"
                 unselectedLabel="VIDEO MUTE"
                 selectedColor="blue"
                 unselectedColor="gray"
+                scaled={screenCount >= 3}
               />
             </div>
           </div>
           <div class="group">
             <div class="input-label">Input Sources (select one)</div>
-            <ButtonGroup buttons={inputSources} />
+            <ButtonGroup buttons={inputSources} scaled={screenCount >= 3} />
           </div>
         </div>
       </div>
@@ -43,8 +46,8 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center; /* Center content vertically */
-      align-items: center; /* Center content horizontally */
+      justify-content: center;
+      align-items: center;
       padding: 20px;
       margin: 10px;
       background-color: #f9f9f9;
@@ -53,10 +56,14 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
   
+    .box.scaled {
+      padding: 10px;
+    }
+  
     .header-container {
       display: flex;
       flex-direction: column;
-      align-items: center; /* Center header horizontally */
+      align-items: center;
       text-align: center;
       gap: 20px;
     }
@@ -64,6 +71,10 @@
     h1 {
       font-size: 3rem;
       margin: 0;
+    }
+  
+    .box.scaled h1 {
+      font-size: 2rem;
     }
   
     .controls-container {
@@ -76,28 +87,50 @@
   
     .buttons-container {
       display: flex;
-      flex-direction: row; /* Arrange groups in a single row */
-      gap: 40px; /* Add space between groups */
-      justify-content: center; /* Center groups horizontally */
-      align-items: flex-end; /* Align groups at the bottom */
+      flex-direction: row;
+      gap: 40px;
+      justify-content: center;
+      align-items: flex-end;
       flex: 1;
-      flex-wrap: nowrap; /* Prevent wrapping to a new row */
+      flex-wrap: nowrap;
+    }
+  
+    .box.scaled .buttons-container {
+      gap: 20px;
     }
   
     .group {
       display: flex;
-      flex-direction: column; /* Stack elements vertically within each group */
+      flex-direction: column;
       gap: 10px;
-      align-items: center; /* Center elements horizontally */
-      justify-content: flex-end; /* Align elements at the bottom */
-      flex: 1; /* Ensure groups take equal space */
+      align-items: center;
+      justify-content: flex-end;
+      flex: 1;
+    }
+  
+    .box.scaled .group {
+      gap: 5px;
     }
   
     .input-label {
       text-align: center;
       font-weight: bold;
       font-size: 1.2rem;
-      margin-bottom: 10px; /* Add consistent spacing below the label */
+      margin-bottom: 10px;
       width: 100%;
+    }
+  
+    .box.scaled .input-label {
+      font-size: 1rem;
+    }
+  
+    button {
+      font-size: 1rem;
+      padding: 15px 20px;
+    }
+  
+    .box.scaled button {
+      font-size: 0.8rem;
+      padding: 10px 15px;
     }
   </style>
