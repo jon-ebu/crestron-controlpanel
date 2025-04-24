@@ -7,6 +7,10 @@
   export let isHtml = false; // New prop to determine if labels should be rendered as HTML
   export let onClick = null; // Optional callback for parent control
 
+  export let componentCount = 1; // Number of buttons or any other input
+  $: scaleFactor = Math.min(1.5, 1 / Math.sqrt(componentCount)); 
+  // example: shrink as number increases, but not too small
+  
   function handleClick() {
     if (onClick) {
       onClick();

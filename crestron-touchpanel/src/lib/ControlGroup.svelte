@@ -3,7 +3,6 @@
     export let projectorControls = [];
     export let inputSources = [];
 </script>
-  
   <div class="box">
     <div id="main-screen">
       <div class="header-container">
