@@ -1,149 +1,159 @@
 <script>
-    export let value = 50; // Initial volume value (0-100)
-    export let onChange = null; // Optional callback for parent control
-    let isMuted = false; // Track mute state
-  
-    function handleInput(event) {
-      value = +event.target.value;
-      if (onChange) {
-        onChange(value);
-      }
-      if (value > 0) {
-        isMuted = false; // Automatically unmute if the slider is adjusted
-      }
+  export let value = 50; // Initial volume value (0-100)
+  export let onChange = null; // Optional callback for parent control
+  let isMuted = false; // Track mute state
+
+  function handleInput(event) {
+    value = +event.target.value;
+    if (onChange) {
+      onChange(value);
     }
-  
-    function decreaseVolume() {
-      value = Math.max(0, value - 10); // Ensure the value doesn't go below 0
-      if (onChange) {
-        onChange(value);
-      }
-      if (value > 0) {
-        isMuted = false; // Automatically unmute if volume is adjusted
-      }
+    if (value > 0) {
+      isMuted = false; // Automatically unmute if the slider is adjusted
     }
-  
-    function increaseVolume() {
-      value = Math.min(100, value + 10); // Ensure the value doesn't exceed 100
-      if (onChange) {
-        onChange(value);
-      }
-      if (value > 0) {
-        isMuted = false; // Automatically unmute if volume is adjusted
-      }
+  }
+
+  function decreaseVolume() {
+    value = Math.max(0, value - 10); // Ensure the value doesn't go below 0
+    if (onChange) {
+      onChange(value);
     }
-  
-    function toggleMute() {
-      isMuted = !isMuted;
-      if (isMuted) {
-        value = 0; // Set volume to 0 when muted
-      } else {
-        value = 50; // Restore volume to a default value (e.g., 50) when unmuted
-      }
-      if (onChange) {
-        onChange(value);
-      }
+    if (value > 0) {
+      isMuted = false; // Automatically unmute if volume is adjusted
     }
-  </script>
-  
-  <div class="slider-container">
-    <button class="icon-button mute-button" on:click={toggleMute}>
-      <i class="bi bi-volume-mute" style="color: {isMuted ? 'white' : 'red'}; background-color: {isMuted ? 'red' : 'white'}; border-radius: 50%; padding: 5px;"></i>
-    </button>
-    <button class="icon-button" on:click={decreaseVolume}>
-      <i class="bi bi-volume-down"></i>
-    </button>
-    <input
-      type="range"
-      min="0"
-      max="100"
-      {value}
-      class="slider"
-      style="--value: {value}%; --track-color: {isMuted ? '#555' : '#f0ad4e'};"
-      on:input={handleInput}
-    />
-    <button class="icon-button" on:click={increaseVolume}>
-      <i class="bi bi-volume-up"></i>
-    </button>
-  </div>
-  
-  <style>
-    .slider-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px;
-      border: 2px solid #ccc;
-      border-radius: 10px;
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  function increaseVolume() {
+    value = Math.min(100, value + 10); // Ensure the value doesn't exceed 100
+    if (onChange) {
+      onChange(value);
     }
-  
-    .icon-button {
-      width: 100px;
-      height: 100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 60px;
-      color: black;
-      background-color: #f9f9f9;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.2s, transform 0.1s;
+    if (value > 0) {
+      isMuted = false; // Automatically unmute if volume is adjusted
     }
-  
-    .icon-button:hover {
-      background-color: #e6e6e6;
+  }
+
+  function toggleMute() {
+    isMuted = !isMuted;
+    if (isMuted) {
+      value = 0; // Set volume to 0 when muted
+    } else {
+      value = 50; // Restore volume to a default value (e.g., 50) when unmuted
     }
-  
-    .icon-button:active {
-      transform: scale(0.95); /* Add a slight press effect */
+    if (onChange) {
+      onChange(value);
     }
-  
-    .mute-button {
-      color: red; /* Default mute button color */
-    }
-  
-    .slider {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 100%;
-      height: 100px; /* Match the height of the buttons */
-      background: linear-gradient(
-        to right,
-        var(--track-color, #f0ad4e) 0%,
-        var(--track-color, #f0ad4e) var(--value, 50%),
-        #f0f0f0 var(--value, 50%),
-        #f0f0f0 100%
-      );
-      border-radius: 5px;
-      outline: none;
-      overflow: hidden;
-      position: relative;
-    }
-  
-    .slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 0; /* Hide the thumb */
-      height: 0; /* Hide the thumb */
-      background: none; /* Remove background */
-      border: none; /* Remove border */
-    }
-  
-    .slider::-moz-range-thumb {
-      width: 0; /* Hide the thumb */
-      height: 0; /* Hide the thumb */
-      background: none; /* Remove background */
-      border: none; /* Remove border */
-    }
-  
-    .slider::-ms-thumb {
-      width: 0; /* Hide the thumb */
-      height: 0; /* Hide the thumb */
-      background: none; /* Remove background */
-      border: none; /* Remove border */
-    }
-  </style>
+  }
+</script>
+
+<div class="slider-container">
+  <button
+    class="icon-button mute-button"
+    aria-label="Mute Button"
+    on:click={toggleMute}
+    style="background-color: {isMuted
+      ? 'red'
+      : 'white'}; border: 3px solid {isMuted ? 'red' : '#ccc'};"
+  >
+    <i class="bi bi-volume-mute" style="color: {isMuted ? 'white' : 'red'};"
+    ></i>
+  </button>
+  <button class="icon-button" on:click={decreaseVolume} aria-label="Decrease volume">
+    <i class="bi bi-volume-down"></i>
+  </button>
+  <input
+    type="range"
+    min="0"
+    max="100"
+    {value}
+    class="slider"
+    style="--value: {value}%; --track-color: {isMuted ? '#555' : '#f0ad4e'};"
+    on:input={handleInput}
+  />
+  <button class="icon-button" on:click={increaseVolume}>
+    <i class="bi bi-volume-up"></i>
+  </button>
+</div>
+
+<style>
+  .slider-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .icon-button {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    color: black;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:
+      background-color 0.2s,
+      transform 0.1s;
+  }
+
+  .icon-button:hover {
+    background-color: #e6e6e6;
+  }
+
+  .icon-button:active {
+    transform: scale(0.95); /* Add a slight press effect */
+  }
+
+  .mute-button {
+    color: red; /* Default mute button color */
+  }
+
+  .slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 100px; /* Match the height of the buttons */
+    background: linear-gradient(
+      to right,
+      var(--track-color, #f0ad4e) 0%,
+      var(--track-color, #f0ad4e) var(--value, 50%),
+      #f0f0f0 var(--value, 50%),
+      #f0f0f0 100%
+    );
+    border-radius: 5px;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0; /* Hide the thumb */
+    height: 0; /* Hide the thumb */
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+  }
+
+  .slider::-moz-range-thumb {
+    width: 0; /* Hide the thumb */
+    height: 0; /* Hide the thumb */
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+  }
+
+  .slider::-ms-thumb {
+    width: 0; /* Hide the thumb */
+    height: 0; /* Hide the thumb */
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+  }
+</style>

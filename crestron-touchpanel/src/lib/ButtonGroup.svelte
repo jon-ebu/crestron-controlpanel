@@ -2,7 +2,7 @@
   import Button from './Button.svelte';
 
   export let buttons = []; // Array of button configurations
-  export let selectedIndex = 0; // Index of the initially selected button
+  export let selectedIndex = null; // Index of the initially selected button
 
   function selectButton(index) {
     selectedIndex = index;
