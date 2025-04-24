@@ -42,7 +42,7 @@
     border: none;
     cursor: pointer;
     border-radius: 20px;
-    width: 150px;
+    width: 200px;
     height: 60px;
     text-align: center;
     white-space: wrap;

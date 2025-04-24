@@ -11,14 +11,8 @@
       unselectedColor: "gray",
     },
     {
-      selectedLabel: "FLOOR HDMI 1",
-      unselectedLabel: "FLOOR HDMI 1",
-      selectedColor: "black",
-      unselectedColor: "gray",
-    },
-    {
-      selectedLabel: "FLOOR HDMI 2",
-      unselectedLabel: "FLOOR HDMI 2",
+      selectedLabel: "FLOOR HDMI",
+      unselectedLabel: "FLOOR HDMI",
       selectedColor: "black",
       unselectedColor: "gray",
     },
