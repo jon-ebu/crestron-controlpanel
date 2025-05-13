@@ -53,7 +53,7 @@
     on:click={toggleMute}
     style="background-color: {isMuted
       ? 'red'
-      : 'white'}; border: 3px solid {isMuted ? 'red' : '#ccc'};"
+      : 'white'}; border: 2px solid {isMuted ? 'red' : 'red'};"
   >
     <i class="bi bi-volume-mute" style="color: {isMuted ? 'white' : 'red'};"
     ></i>
@@ -81,21 +81,22 @@
     align-items: center;
     gap: 10px;
     padding: 10px;
-    border: 2px solid #ccc;
+    padding-right: 20px;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   .icon-button {
+    color: #878787;
     width: 100px;
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 60px;
-    background-color: #f9f9f9;
-    border: 3px solid rgb(204, 204, 204);
+    background-color: #ebebeb;
+    border: 2px solid #878787;
     border-radius: 5px;
     cursor: pointer;
     transition:
@@ -124,9 +125,10 @@
       to right,
       var(--track-color, #f0ad4e) 0%,
       var(--track-color, #f0ad4e) var(--value, 50%),
-      #f0f0f0 var(--value, 50%),
-      #f0f0f0 100%
+      #e6e6e6 var(--value, 50%),
+      #e6e6e6 100%
     );
+    border: 2px solid #878787;
     border-radius: 5px;
     outline: none;
     overflow: hidden;

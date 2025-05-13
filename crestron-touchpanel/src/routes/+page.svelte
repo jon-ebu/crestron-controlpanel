@@ -26,7 +26,6 @@
   <div id="page-container">
     <!-- Main Screen Section -->
     <VideoControls title="MAIN SCREEN" inputSources={inputSources} />
-    <VideoControls title="SIDE SCREEN" inputSources={inputSources} />
     <Footer />
   </div>
 </div>

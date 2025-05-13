@@ -46,7 +46,6 @@
     padding: 20px;
     margin: 10px;
     background-color: #f9f9f9;
-    border: 2px solid #878787;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }

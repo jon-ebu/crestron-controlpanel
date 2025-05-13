@@ -37,13 +37,14 @@
   }
 
   #footer {
+    flex: 0;
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 10px 20px;
+    padding: 20px;
+    margin: 10px;
     background-color: #f9f9f9;
-    border-top: 2px solid #ccc;
-    flex-shrink: 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   .slider-wrapper {
