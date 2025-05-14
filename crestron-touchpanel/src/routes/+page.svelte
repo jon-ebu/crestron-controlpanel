@@ -1,5 +1,5 @@
 <script>
-  import VideoControls from "$lib/VideoControls.svelte";
+  import SourceControls from "$lib/SourceControls.svelte";
   import Footer from "$lib/Footer.svelte"; // Verify this path and ensure Footer.svelte is correctly exported
   import "../app.css"; // Ensure this path is correct
 
@@ -25,7 +25,7 @@
 <div id="scaling-container">
   <div id="page-container">
     <!-- Main Screen Section -->
-    <VideoControls title="MAIN SCREEN" inputSources={inputSources} />
+    <SourceControls title="MAIN SCREEN" inputSources={inputSources} />
     <Footer />
   </div>
 </div>

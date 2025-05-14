@@ -102,10 +102,6 @@
       transform 0.1s;
   }
 
-  .icon-button:hover {
-    background-color: #e6e6e6;
-  }
-
   .icon-button:active {
     transform: scale(0.95); /* Add a slight press effect */
   }

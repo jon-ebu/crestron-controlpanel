@@ -1,5 +1,5 @@
 <script>
-  import VolumeSlider from "./VolumeSlider.svelte";
+  import VolumeControls from "./VolumeControls.svelte";
   import Button from "./Button.svelte";
 
   let volume = 50; // Initialize the volume variable
@@ -12,8 +12,8 @@
 
 <div id="footer">
   <div class="slider-wrapper">
-    <!-- Ensure the VolumeSlider emits a 'change' event with the new volume -->
-    <VolumeSlider value={volume} on:change={handleVolumeChange} />
+    <!-- Ensure the VolumeControls emits a 'change' event with the new volume -->
+    <VolumeControls value={volume} on:change={handleVolumeChange} />
   </div>
   <Button
     selectedLabel="SYSTEM OFF"
