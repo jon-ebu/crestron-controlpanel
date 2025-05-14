@@ -1,5 +1,6 @@
 <script>
   import Button from "./Button.svelte";
+  import "../app.css"; // Ensure this path is correct
   import ButtonGroup from "./ButtonGroup.svelte";
   export let title = "Default Title"; // Configurable title
   export let inputSources = []; // Configurable array of input sources
@@ -11,8 +12,8 @@
     <div class="controls-container">
       <div class="buttons-container">
         <div class="group">
-          <div>
             <div class="input-label">Projector Controls</div>
+            <div class="button-group">
             <Button
               selectedLabel="POWER OFF"
               unselectedLabel="POWER ON"
@@ -27,7 +28,7 @@
               unselectedColor="gray"
             />
           </div>
-        </div>
+      </div>
         <div class="group">
           <div class="input-label">Input Sources (select one)</div>
           <ButtonGroup buttons={inputSources} />

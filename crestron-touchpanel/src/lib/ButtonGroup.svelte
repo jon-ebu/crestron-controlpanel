@@ -1,6 +1,6 @@
 <script>
   import Button from './Button.svelte';
-
+  import '../app.css';
   export let buttons = []; // Array of button configurations
   export let selectedIndex = null; // Index of the initially selected button
   export let scaled = false; // New prop to handle scaling
@@ -25,12 +25,5 @@
 </div>
 
 <style>
-  .button-group {
-    display: flex;
-    gap: 10px;
-  }
 
-  .button-group.scaled {
-    gap: 5px;
-  }
 </style>

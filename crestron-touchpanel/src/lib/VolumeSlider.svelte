@@ -88,16 +88,17 @@
   }
 
   .icon-button {
-    color: #878787;
+    color: white;
+    padding: 5px 10px;
     width: 100px;
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 60px;
-    background-color: #ebebeb;
-    border: 2px solid #878787;
-    border-radius: 5px;
+    background-color: gray;
+    border: 2px solid gray;
+    border-radius: 15px;
     cursor: pointer;
     transition:
       background-color 0.2s,
@@ -125,10 +126,9 @@
       to right,
       var(--track-color, #f0ad4e) 0%,
       var(--track-color, #f0ad4e) var(--value, 50%),
-      #e6e6e6 var(--value, 50%),
-      #e6e6e6 100%
+      #ccc var(--value, 50%),
+      #ccc 100%
     );
-    border: 2px solid #878787;
     border-radius: 5px;
     outline: none;
     overflow: hidden;

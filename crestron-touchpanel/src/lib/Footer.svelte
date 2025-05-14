@@ -30,7 +30,7 @@
     color: white;
     border: 2px solid red;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
     width: 200px;
     height: 100px;

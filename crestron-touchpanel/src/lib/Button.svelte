@@ -43,7 +43,7 @@
     cursor: pointer;
     border-radius: 20px;
     width: 200px;
-    height: 100px;
+    height: 150px;
     text-align: center;
     white-space: wrap;
     transition: all 0.3s ease; /* Smooth transition for animations */

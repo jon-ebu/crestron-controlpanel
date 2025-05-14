@@ -12,14 +12,16 @@
           <div class="buttons-container">
             <div class="group">
               <div class="input-label">Projector Controls</div>
-              {#each projectorControls as control}
-                <Button
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                {#each projectorControls as control}
+                  <Button
                   selectedLabel={control.selectedLabel}
                   unselectedLabel={control.unselectedLabel}
                   selectedColor={control.selectedColor}
                   unselectedColor={control.unselectedColor}
-                />
-              {/each}
+                  />
+                {/each}
+                </div>
             </div>
             <div class="group">
               <div class="input-label">Input Sources</div>
