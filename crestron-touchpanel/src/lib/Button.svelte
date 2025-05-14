@@ -10,6 +10,10 @@
     onClick = null // Optional callback for parent control
   } = $props();
 
+  export let componentCount = 1; // Number of buttons or any other input
+  $: scaleFactor = Math.min(1.5, 1 / Math.sqrt(componentCount)); 
+  // example: shrink as number increases, but not too small
+  
   function handleClick() {
     if (onClick) {
       onClick();

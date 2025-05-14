@@ -3,6 +3,17 @@
   import Footer from "$lib/Footer.svelte"; // Verify this path and ensure Footer.svelte is correctly exported
   import "../app.css"; // Ensure this path is correct
 
+
+  // Check the total height on mount
+  import { onMount } from "svelte";
+  onMount(() => {
+    const totalHeight = getTotalDivHeight();
+    if (totalHeight > 5815) {
+      isPageTooTall = true;
+    }
+  });
+
+
   let inputSources = [
     {
       selectedLabel: "WALL HDMI",
