@@ -14,7 +14,8 @@
     </div>
   </div>
   
-  <style>
+  <style lang="scss">
+    @import '../global.scss';  
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -47,7 +48,7 @@
       color: white;
       border: none;
       padding: 10px 20px;
-      border-radius: 5px;
+      border-radius: $button-border-radius;
       cursor: pointer;
     }
   

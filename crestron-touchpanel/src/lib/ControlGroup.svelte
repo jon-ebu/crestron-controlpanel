@@ -33,7 +33,8 @@
     </div>
   </div>
   
-  <style>
+  <style lang="scss">
+  @import '../styles/global.scss';
     .box {
   display: flex;
   flex-direction: column;
@@ -57,12 +58,5 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-}
-
-.input-label {
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
 }
   </style>

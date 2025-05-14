@@ -34,30 +34,31 @@
   {/if}
 </button>
 
-<style>
+<style lang="scss">
+  @import '../global.scss';
   button {
     padding: 10px 20px;
-    font-size: 30px;
+    font-size: $button-font-size;
     font-weight: bold;
     border: none;
     cursor: pointer;
-    border-radius: 20px;
-    width: 200px;
-    height: 150px;
+    border-radius: $button-border-radius;
+    width: $button-width;
+    height: $button-height;
     text-align: center;
     white-space: wrap;
     transition: all 0.3s ease; /* Smooth transition for animations */
   }
 
   button.on {
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.7); /* Glow effect for "on" state */
+    border: 4px solid blue; /* Add blue border when selected */
     transform: scale(
       1.05
     ); /* Slightly enlarge the button for tactile feedback */
   }
 
   button.off {
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7); /* Glow effect for "off" state */
+    border: none; /* No border when not selected */
     transform: scale(1); /* Normal size for "off" state */
   }
 

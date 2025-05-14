@@ -37,7 +37,8 @@
     </div>
   </div>
 </div>
-<style>
+<style lang="scss">
+  @import '../global.scss';
   .box {
     flex: 1;
     display: flex;
@@ -60,7 +61,7 @@
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: $screen-label-font-size;
     margin: 0;
   }
 
@@ -92,15 +93,11 @@
   }
 
   .input-label {
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    width: 100%;
-  }
+  text-align: center;
+  font-weight: bold;
+  font-size: $input-label-font-size;
+  margin-bottom: 10px;
+}
 
-  button {
-    font-size: 1rem;
-    padding: 15px 20px;
-  }
+
 </style>

@@ -17,24 +17,15 @@
   </div>
   <Button
     class="turn-off-system"
-    selectedLabel="Turn Off System"
-    unselectedLabel="Turn Off System"
+    selectedLabel="SYSTEM OFF"
+    unselectedLabel="SYSTEM OFF"
     selectedColor="red"
     unselectedColor="red"
   />
 </div>
 
-<style>
-  :global(#footer .turn-off-system) {
-    background-color: rgb(255, 0, 0)(8, 5, 5);
-    color: white;
-    border: 2px solid red;
-    padding: 10px 20px;
-    border-radius: 15px;
-    cursor: pointer;
-    width: 200px;
-    height: 100px;
-  }
+<style lang="scss">
+  @import '../global.scss';
 
   #footer {
     flex: 0;

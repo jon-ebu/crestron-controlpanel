@@ -75,7 +75,8 @@
   </button>
 </div>
 
-<style>
+<style lang="scss">
+  @import '../global.scss';
   .slider-container {
     display: flex;
     align-items: center;
@@ -91,7 +92,7 @@
     color: white;
     padding: 5px 10px;
     width: 100px;
-    height: 100px;
+    height: $button-height;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,8 +121,8 @@
   .slider {
     -webkit-appearance: none;
     appearance: none;
-    width: 100%;
-    height: 100px; /* Match the height of the buttons */
+    width: 75%;
+    height: $button-height; /* Match the height of the buttons */
     background: linear-gradient(
       to right,
       var(--track-color, #f0ad4e) 0%,
