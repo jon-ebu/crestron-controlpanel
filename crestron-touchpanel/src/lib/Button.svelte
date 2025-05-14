@@ -22,10 +22,8 @@
 
 <button
   on:click={handleClick}
-  class={propsClass}
-  style="background-color: {isSelected
-    ? selectedColor
-    : unselectedColor}; color: white;"
+  class="{propsClass} {propsClass === 'exclude-style' ? '' : isSelected ? 'on' : 'off'}"
+  style="background-color: {isSelected ? selectedColor : unselectedColor}; color: white;"
 >
   {#if isHtml}
     {@html isSelected ? selectedLabel : unselectedLabel}
@@ -51,7 +49,7 @@
   }
 
   button.on {
-    border: 4px solid blue; /* Add blue border when selected */
+    border: 6px solid blue; /* Add blue border when selected */
     transform: scale(
       1.05
     ); /* Slightly enlarge the button for tactile feedback */
@@ -65,4 +63,9 @@
   button:active {
     transform: scale(0.95); /* Slight shrink effect when clicked */
   }
+
+  button.exclude-style {
+  border: none; /* Exclude these buttons from the 'on' or 'off' styles */
+  transform: none;
+}
 </style>

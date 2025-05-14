@@ -20,6 +20,7 @@
               selectedColor="red"
               unselectedColor="green"
               isHtml={true}
+              class="exclude-style"
             />
             <Button
               selectedLabel="VIDEO MUTE"
@@ -86,7 +87,7 @@
   .group {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     align-items: center;
     justify-content: flex-end;
     flex: 1;
@@ -98,6 +99,5 @@
   font-size: $input-label-font-size;
   margin-bottom: 10px;
 }
-
 
 </style>

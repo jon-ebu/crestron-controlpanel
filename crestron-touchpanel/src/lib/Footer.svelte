@@ -16,11 +16,11 @@
     <VolumeSlider value={volume} on:change={handleVolumeChange} />
   </div>
   <Button
-    class="turn-off-system"
     selectedLabel="SYSTEM OFF"
     unselectedLabel="SYSTEM OFF"
     selectedColor="red"
     unselectedColor="red"
+    class="exclude-style"
   />
 </div>
 

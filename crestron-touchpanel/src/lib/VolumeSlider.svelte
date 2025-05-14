@@ -51,11 +51,10 @@
     class="icon-button mute-button"
     aria-label="Mute Button"
     on:click={toggleMute}
-    style="background-color: {isMuted
-      ? 'red'
-      : 'white'}; border: 2px solid {isMuted ? 'red' : 'red'};"
+    style="background-color: {isMuted ? 'lightgray' : 'white'};
+           border: {isMuted ? 'none' : '2px solid gray'};"
   >
-    <i class="bi bi-volume-mute" style="color: {isMuted ? 'white' : 'red'};"
+    <i class="bi bi-volume-mute" style="color: {isMuted ? 'red' : 'gray'};"
     ></i>
   </button>
   <button class="icon-button" on:click={decreaseVolume} aria-label="Decrease volume">
@@ -83,23 +82,20 @@
     gap: 10px;
     padding: 10px;
     padding-right: 20px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   .icon-button {
     color: white;
     padding: 5px 10px;
-    width: 100px;
-    height: $button-height;
+    width: $button-width/1.618;
+    height: $button-height/1.618;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 60px;
     background-color: gray;
     border: 2px solid gray;
-    border-radius: 15px;
+    border-radius: 50%;
     cursor: pointer;
     transition:
       background-color 0.2s,
@@ -122,7 +118,7 @@
     -webkit-appearance: none;
     appearance: none;
     width: 75%;
-    height: $button-height; /* Match the height of the buttons */
+    height: $button-height/1.618; /* Match the height of the buttons */
     background: linear-gradient(
       to right,
       var(--track-color, #f0ad4e) 0%,
